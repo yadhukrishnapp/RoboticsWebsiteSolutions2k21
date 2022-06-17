@@ -1,0 +1,124 @@
+@use './variables' as variables;
+nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    box-sizing: border-box;
+    padding:0px 2em;
+    position:relative;
+    @media only screen and (max-width:900px){
+        &>ul{
+            margin-top:0px;
+            transform:translateX(-100%);
+            opacity:0;
+            transition:transform 0.3s ease-in-out , opacity 0.3s ease-out;
+            position: relative;
+            box-sizing: border-box;
+            border-bottom:10px solid variables.$black_color;
+        }
+        &[enabled="1"]{
+            &>ul{
+                transform:translateX(0%);
+                opacity:1;
+            }
+        }
+    }
+    @media only screen and (max-width:700px){
+        padding:0px 1.5em;
+    }
+
+}
+nav>div.main-logo{
+    height:7em;
+    width:7em;
+    background-size:contain;
+    background-position:center;
+    background-image:url('../images/main-logo.png');
+    background-repeat:no-repeat;
+    @media only screen and (max-width:700px){
+        &{
+            width:3em;
+            height:3em;
+        }
+    }
+}
+nav>ul{
+    padding-left:0px;
+    display:flex;
+    list-style:None;
+    font-size:1.2em;
+    
+    @media only screen and (max-width:900px){
+        position:absolute;
+        flex-flow:column;
+        align-items:flex-start;
+        width:100%;
+        top:80%;
+        padding-left:1.5em;
+        padding-bottom:2em;
+        padding-top:2em;
+        box-sizing: border-box;
+        left:0px;
+        z-index:1;
+        background-color:white;
+        &>div.line{
+                width:80%;
+                position:relative;
+                left:0.5em;
+                height:2px;
+                margin:0.5em 0px;
+                background-color:gray;
+        }
+    }
+}
+nav>ul>li{
+    margin:0px 0.5em;
+    font-family:variables.$nav_font;
+    padding:0.3em 0.5em;
+    text-transform:uppercase;
+    font-weight:bolder;
+    overflow:hidden;
+    cursor:pointer;
+    transition:transform 0.1s ease-in;
+    &:hover{
+        transform:translateY(-2px);
+        color:black;
+    }
+    &.small-screen{
+        display:none;
+    }
+    @media only screen and (max-width:900px){
+        margin-bottom:0.5em;
+        padding-left:0px;
+        &.small-screen{
+            display:block;
+            color:gray;
+        }
+    }
+
+}
+nav>ul>li.special{
+    background-color:variables.$black_color;
+    color:white;
+    padding:0.3em 0.8em;
+    &>a{
+        text-decoration:none;
+        color:white;
+    }
+}
+nav>span{
+    display:none;
+    cursor:pointer;
+    @media only screen and (max-width:900px){
+        display:block;
+        height:3em;
+        width:3em;
+        background-size:contain;
+        background-position:center;
+        background-image:url('../images/nav-burger.svg');
+    }
+    @media only screen and (max-width:700px){
+        width:2em;
+        height:2em;
+    }
+}

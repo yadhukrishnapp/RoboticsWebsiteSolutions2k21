@@ -1,0 +1,284 @@
+@import url(https://fonts.googleapis.com/css?family=Puritan);
+@import url(https://fonts.googleapis.com/css?family=Varela);
+@import url(https://fonts.googleapis.com/css?family=Poppins);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.section-title {
+  text-align: center;
+
+}
+.section-title h2 {
+  font-size: 40px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-family: 'puritan';
+  padding: 8px 20px;
+  line-height: 1;
+  margin: 5%;
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 50px;
+  background: white;
+  color: #40857f;
+  border: 2.5px solid #8dfaf1;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+.logo {
+  margin: 7%;
+}
+
+.line {
+  margin-top: 5%;
+  margin-right: 5%;
+}
+
+.quote {
+  margin-top: 5%;
+  width: 80%;
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 28px;
+  color: #000000;
+}
+
+.content {
+  width: 80%;
+  height: 450px;
+  font-family: Varela;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 40px;
+  color: #7d7d7d;
+  overflow: scroll;
+  scroll-behavior: smooth;
+  margin-top: 5%;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.subscribe {
+  margin: 2%;
+  width: fit-content;
+  padding: 0 2%;
+
+  background: #37f0e2;
+  border-radius: 15px;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  color: #000000;
+}
+
+#innerSubscribe {
+  padding: 2%;
+}
+
+
+.members {
+  margin: 2%;
+  width: fit-content;
+  padding: 0 2%;
+
+  background: #7d7d7d;
+  border-radius: 15px;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+ 
+
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7d7d7d;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #37f0e2;
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 100vh;
+    width: 100%;
+  }
+  .logo {
+    margin: 0;
+    width: 100%;
+  }
+
+  .logo1 {
+    width: 100%;
+    height: 100%;
+  }
+
+  .quote {
+    font-family: Poppins;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 18px;
+    color: #000000;
+  }
+
+  .line1 {
+    margin-top: 5%;
+    margin-right: 5%;
+    height: 400px;
+  }
+
+  .content {
+    height: 350px;
+    font-family: Varela;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #7d7d7d;
+    margin-right: 10%;
+    overflow: scroll;
+    width: 90%;
+  }
+  .content p {
+    line-height: 1.8em;
+  }
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .subscribe {
+    background: #37f0e2;
+    border-radius: 7px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 300%;
+
+    color: #000000;
+  }
+
+  .members {
+    margin: 2%;
+    width: fit-content;
+    padding: 0 2%;
+
+    background: #7d7d7d;
+    border-radius: 7px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 300%;
+
+    color: #ffffff;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin-left: 5%;
+    width: 90%;
+  }
+  .logo {
+    height: 50%;
+    width: 50%;
+    margin-top: 50%;
+  }
+  .logo img {
+    margin-top: 5%;
+    width: 80%;
+    height: 80%;
+  }
+  .line {
+    display: none;
+  }
+
+  .quote {
+    font-family: Poppins;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 15px;
+    color: #000000;
+  }
+
+  .content {
+    font-family: Varela;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #7d7d7d;
+  }
+  .infoContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .subscribe {
+    background: #37f0e2;
+    border-radius: 7px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+
+    color: #000000;
+  }
+
+  .members {
+    margin: 2%;
+    width: fit-content;
+    padding: 0 2%;
+
+    background: #7d7d7d;
+    border-radius: 7px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 300%;
+
+    color: #ffffff;
+  }
+}

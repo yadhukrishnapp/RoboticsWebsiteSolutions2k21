@@ -1,0 +1,255 @@
+@use './variables' as variables;
+
+section.footer-page{
+    height:700px;
+    background-color:variables.$primary_color;
+    font-family:variables.$puritan_font;
+    display:flex;
+    overflow:hidden;
+    justify-content:space-between;
+    @media only screen and (max-width:970px){
+        flex-flow:column-reverse;
+        height:initial;
+        background-color:transparent;
+    }
+}
+section.footer-page>div.footer-text{
+    flex-basis:300px;
+    flex-shrink:0;
+    flex-grow:0;
+    align-self:flex-end;
+    &>ul{
+        padding-left:0px;
+        list-style:none;
+        padding-bottom:0.1em;
+    }
+    &>ul>li:first-child{
+        font-size:2.5em;
+        background-color:white;
+        padding:0.2em 0px;
+        padding-left:1.4em;
+        box-sizing: border-box;
+        border-radius:0px 2em 2em 0px;
+        font-weight:bold;
+    }
+    &>ul>li:not(:first-child){
+        font-size:1.8em;
+        margin:0.7em 0px;
+        padding-left:2.2em;
+    }
+    @media only screen and (max-width:970px){
+        flex-basis:initial;
+        align-self:center;
+        width:100%;
+        background-color:variables.$primary_color;
+        &>ul>li:first-child{
+            width:100%;
+            text-align:center;
+            padding-left:0px;
+            border-radius:0px;
+        }
+        &>ul>li:not(:first-child){
+            text-align:center;
+            width:100%;
+            padding-left:0px;
+        }
+    }
+    @media only screen and (max-width:750px){
+        font-size:0.8em;
+    }
+}
+section.footer-page>div.footer-text>h1{
+    margin-top:0px;
+    font-size:5em;
+    font-weight:bold;
+    padding-left:0.7em;
+    margin-bottom:0.3em;
+    @media only screen and (max-width:970px){
+        padding-left:0px;
+        text-align:center;
+    }
+    @media only screen and (max-width:750px){
+        font-size:4em;
+    }
+    @media only screen and (max-width:550px){
+        font-size:3em;
+    }
+}
+section.footer-page>div.contact-wrapper{
+    flex-basis:calc(100vw - 450px);
+    align-self:flex-end;
+    background-size:contain;
+    background-repeat:repeat;
+    background-image:url('../images/robotics-doodle-bg.svg');
+    height:100%;
+    border-radius:300% 0px 0px 0px;
+    position:relative;
+
+    @media only screen and (max-width:970px){
+        flex-basis:initial;
+        width:100%;
+        height:640px;
+        background-color:variables.$primary_color;
+        background-image:None;
+    }
+}
+section.footer-page>div.contact-wrapper>div.contact-div{
+    position:absolute;
+    width:calc(550px * (440 / 600));
+    height:550px;
+    background-color:variables.$black_color;
+    border-radius: 1em;
+    right:2em;
+    bottom:2em;
+    padding:1em;
+    box-sizing:border-box;
+    display:flex;
+    flex-flow:column;
+    align-items:center;
+
+    &>input , &>textarea{
+        font-family:variables.$puritan_font;
+        font-size:1.3em;
+        padding:0.6em 0.5em;
+        border-radius:0.2em;
+        border:0px solid black;
+        margin-bottom:1em;
+        z-index:2;
+    }
+    &>input.name{
+        width:75%;
+    }
+    &>input.email{
+        width:80%;
+    }
+    &>textarea{
+        width:85%;
+        margin-top:1em;
+        height:120px;
+    }
+    &>button{
+        background-color:variables.$primary_color;
+        color:black;
+        border:0px solid black;
+        font-size:1.3em;
+        padding:0.3em 2em;
+        border-radius:0.2em;
+        box-shadow:0px 3px 5px rgba(0,0,0,0.3);
+        margin-top:0.5em;
+        font-weight:700;
+        text-transform:uppercase;
+        font-family:variables.$puritan_font;
+        z-index:2;
+    }
+    &::after{
+        content:"";
+        background-image:url('../images/footer-bot.svg');
+        position:absolute;
+        bottom:0px;
+        top:10%;
+        right:0px;
+        left:-60%;
+        transform-origin:50% 100%;
+        transform:rotateZ(-30deg) translateY(-10%);
+        background-size:contain;
+        background-position:center bottom;
+        background-repeat: no-repeat;
+        z-index:0;
+        @media only screen and (max-width:1166px) {
+            top:30%;
+        }
+        @media only screen and (max-width:1030px) {
+            transform:translateY(-45%);
+            top:17%;
+            left:-5%;
+        }
+    }
+    div.bg{
+        position:absolute;
+        top:0px;
+        left:0px;
+        right:0px;
+        bottom:0px;
+        background-color:inherit;
+        border-radius:inherit;
+        z-index:1;
+    }
+
+    @media only screen and (max-width:970px){
+        height:500px;
+        left:50%;
+        transform:translateX(-50%);
+    }
+    @media only screen and (max-width:450px){
+        width:350px;
+        font-size:0.9em;
+        height:auto;
+        &>textarea{
+            height:80px;
+        }
+    }
+
+}
+section.footer-page>div.contact-wrapper>div.contact-div>h2{
+    font-size:2.5em;
+    color:white;
+    margin:1em 0px;
+    margin-top:0.5em;
+    z-index:2;
+}
+
+section.footer-page>div.footer-text>div.footer-comms{
+    display:flex;
+    margin-bottom:3em;
+    margin-left:3.4em;
+    &>span{
+        width:4em;
+        height:4em;
+        background-color:black;
+        margin-right:2em;
+        border-radius:50%;
+        background-size:contain;
+        background-position:center;
+    }
+    &>span:nth-child(1){
+        background-image:url('../images/facebook.svg');
+    }
+    &>span:nth-child(2){
+        background-image:url('../images/instagram.svg');
+    }
+    &>span:nth-child(3){
+        background-image:url('../images/mail.svg');
+    }
+    
+    @media only screen and (max-width:970px){
+        justify-content:center;
+    }
+}
+
+
+
+div.seperator{
+    width:78%;
+    align-items:Center;
+    justify-content: center;
+    display:flex;
+    z-index:2;
+    margin:0.5em 0px;
+    &>span{
+        background-color:white;
+    }
+    &>span:nth-child(2){
+        width:1em;
+        height:1em;
+        margin:0px 0.5em;
+        border-radius:50%;
+    }
+    &>span:first-child{
+        width:40%;
+        height:3px;
+    }
+    &>span:last-child{
+        width:40%;
+        height:3px;
+    }
+}

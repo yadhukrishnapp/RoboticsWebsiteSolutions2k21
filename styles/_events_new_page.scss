@@ -1,0 +1,230 @@
+@use './variables' as variables;
+h1.event-page-heading{
+    font-size:7em;
+    margin-bottom:0px;
+    margin-top:0.5em;
+    text-align:center;
+    font-family:variables.$puritan_font;
+
+    @media screen and (max-width:682px){
+        font-size:4em;
+        margin-bottom:0.5em;
+    }
+}
+div.event-nav-grp{
+    display:flex;
+    justify-content: center;
+    width:90%;
+    font-family:variables.$puritan_font;
+    align-items:center;
+    margin: 0 auto;
+    @media screen and (max-width:460px){
+        justify-content:space-between;
+    }
+    &>button{
+        border:0px;
+        background-color:white;
+        width:18rem;
+        font-size:2.5em;
+        align-self:center;
+        display:flex;
+        flex-flow:column;
+        height:18rem;
+        flex-grow:0;
+        flex-shrink:0;
+        margin:0px 1.3rem;
+        font-family: variables.$puritan_font;
+        position:relative;
+        top:4rem;
+        border-radius:1em;
+        box-shadow: 0px 0px 20px 10px #0000001A;
+        align-items:center;
+        &>span{
+            font-weight:bolder;
+        }
+        &>i{
+            height:3.4em;
+            width:3.4em;
+            border-radius:50%;
+            margin-top:1em;
+            margin-bottom:0.6em;
+            background-size:contain;
+            background-position:center;
+            background-repeat: no-repeat;
+        }
+
+        &.selected{
+            border:2px solid black;
+        }
+        @media only screen and (max-width:1340px){
+            width:14rem;
+            height:14rem;
+            font-size:2.1em;
+        }
+        @media only screen and (max-width:1100px){
+            width:12rem;
+            height:12rem;
+            font-size:1.8em;
+        }
+        @media only screen and (max-width:960px){
+            width:11rem;
+            height:11rem;
+            font-size:1.7em;
+        }
+        @media only screen and (max-width:888px){
+            margin:0px 0.5em;
+            width:10rem;
+            height:10rem;
+            font-size:1.5em;
+        }
+        @media only screen and (max-width:754px){
+            padding:0px;
+            border-radius:2em;
+            width:6rem;
+            height:6rem;
+            border-radius:3em;
+            position:relative;
+
+            &>span{
+                display:none;
+                flex-shrink:0;
+            }
+            &>i{
+                position:absolute;
+                top:50%;
+                transform:translateY(-50%);
+                margin:0px;
+                flex-shrink:0;
+            }
+
+            &.selected{
+                display:flex;
+                flex-flow:row;
+                border-radius:3em;
+                align-items:center;
+                justify-content: center;
+                flex-grow:1;
+                border:0px solid black;
+                &>span{
+                    display:block;
+                    padding:0px 0.5em;
+                    font-size:1.3em;
+                    font-weight:bold;
+                }
+                &>i{
+                    position:static;
+                    transform:translateY(0px);
+                }
+                width:auto;
+            }
+        }
+
+        @media screen and (max-width:682px){
+            width:4rem;
+            height:4rem;
+            font-size:1em;
+            top:1.8em;
+        }
+        @media screen and (max-width:460px){
+            width:3.5rem;
+            height:3.5rem;
+            font-size:0.8em;
+            margin:0px 0.2em;
+        }
+
+        &:nth-child(1)>i{
+            &>span{
+                display:none;
+            }
+        }
+        &:nth-child(1)>i{
+            background-image:url('../images/quizotics.svg');
+        }
+        &:nth-child(2)>i{
+            background-image:url('../images/scintilla.svg');
+        }
+        &:nth-child(3)>i{
+            background-image:url('../images/smart_house.svg');
+        }
+        &:nth-child(4)>i{
+            background-image:url('../images/solidworks.svg');
+        }
+    }
+}
+div.event-content{
+    width:100%;
+    border-radius:3em 3em 0px 0px;
+    background-color:variables.$black_color;
+    padding-top:6rem;
+    padding-bottom:2em;
+    color:white;
+    font-family:variables.$puritan_font;
+    padding-left:2em;
+    padding-right:2em;
+    box-sizing: border-box;
+    
+    @media screen and (max-width:682px){
+        font-size:0.8em;
+        padding-top:1rem;
+        border-radius:1.5em 1.5em 0px 0px;
+    }
+    &>h2{
+        font-size:4em;
+        text-transform:uppercase;
+        box-sizing: border-box;
+        margin-bottom:0.5em;
+        margin-top:1em;
+    }
+    &>span.small{
+        font-size:1.4em;
+        font-family:variables.$source_sans_font;
+        color:variables.$primary_color;
+        display:flex;
+        align-items:center;
+        margin-bottom:1em;
+        &>i{
+            margin-right:0.5em;
+            width:1em;
+            height:1em;
+            background-size:contain;
+            background-position:center;
+            display:inline-block;
+            background-repeat: no-repeat;
+        }
+        &.date>i{
+            background-image:url('../images/calender.svg');
+        }
+        &.team>i{
+            background-image:url('../images/teams.svg');
+        }
+    }
+    &>div.event-content-inner{
+        &>span{
+            color:white;
+            text-transform:uppercase;
+            font-size:2em;
+            font-weight:Bold;
+            margin-top:0.5em;
+            display:inline-block;
+            border-bottom:2px solid white;
+        }
+        &>p{
+            font-size:1.5em;
+            max-width:950px;
+            font-family: variables.$source_sans_font;
+            letter-spacing:0.03em;
+            word-spacing: 0.2em;;
+            line-height:1.3em;
+            color:#eee;
+            font-weight:500;
+        }
+        &>ul{
+            padding-left:0.5em;
+            font-size:1.5em;
+            font-family:variables.$source_sans_font;
+            letter-spacing:0.03em;
+            word-spacing: 0.2em;;
+            line-height:1.3em;
+        }
+    }
+}

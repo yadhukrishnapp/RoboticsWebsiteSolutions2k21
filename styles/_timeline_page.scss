@@ -1,0 +1,259 @@
+@use './variables'as variables;
+section.timeline-page{
+    position:relative;
+    background-size:contain;
+    background-position:center top;
+    background-image:url('../images/timeline-screen.svg');
+    background-repeat:no-repeat;
+
+    @media only screen and (max-width:1240px){
+        padding-top:50px;
+    }
+    @media only screen and (max-width:950px){
+        font-size:0.9em;
+    }
+    @media only screen and (max-width:620px){
+        background-image:none;
+            font-size:0.7em;
+        &::after{
+            content:"";
+            background-image:url('../images/small-screen-timeline-bg.svg');    
+            background-size:contain;
+            background-position:left center;
+            width:100vw;
+            height:100%;
+            position:absolute;
+            top:-60%;
+            background-repeat:no-repeat;
+            z-index:-1;
+        }
+    }
+
+}
+section.timeline-page>div.countdown{
+    text-align:center;
+    font-size:1em;
+    font-family:variables.$puritan_font;
+    & i{
+        font-style:normal;
+    }
+    @media only screen and (max-width:900px){
+        font-size:0.8em;
+    }
+}
+section.timeline-page>div.countdown>h1{
+    font-size:8em;
+    margin:0px;
+    @media only screen and (max-width:620px){
+        font-size:6em;
+    }
+}
+
+section.timeline-page>div.countdown>h2{
+    font-size:3em;
+    margin-top:0px;
+}
+
+section.timeline-page>div.timeline-info{
+    display:grid;
+    grid-template-columns:55% 45%;
+    font-family:variables.$puritan_font;
+    padding:2em 0px;
+    padding-top:1em;
+    @media only screen and (max-width:900px){
+        grid-template-columns: 100%;
+    }
+}
+div.timeline-info>div.left{
+    box-sizing: border-box;
+    padding-left:2.5em;
+    position:relative;
+    align-self:center;
+    @media only screen and (max-width:900px){
+        display:none;
+    }
+}
+div.timeline-info>div.left>h1{
+    font-size:6em;
+    margin:0px;
+    margin-bottom:0.3em;
+    @media only screen and (max-width:1046px){
+        font-size:5em;
+    }
+}
+div.timeline-info>div.left>span{
+    display:block;
+    margin-bottom:0.5em;
+    font-size:2em;
+    @media only screen and (max-width:1046px){
+        font-size:1.6em;
+    }
+}
+div.timeline-info>div.left>span>i{
+    font-size:1.5em;
+    font-style:normal;
+    font-weight:bold;
+    background-color:variables.$black_color;
+    padding:0px 0.33em;
+    margin-right:0.3em;
+    display:inline-block;
+    border-radius:50%;
+    color:white;
+}
+div.timeline-info>div.right{
+    justify-self:right;
+    text-align:left;
+    box-sizing: border-box;
+    margin-right:2.5em;
+    background-color:variables.$black_color;
+    color:white;
+    width:90%;
+    padding:2em 0px;
+    border-radius:0.5em;
+    padding-left:2em;
+    @media only screen and (max-width:900px){
+        width:80%;
+        text-align:left;
+        padding:2em 0px;
+        padding-left:2em;
+        justify-self:center;
+        background-color:transparent;
+        color:black;
+        margin-top:5em;
+    }
+    @media only screen and (max-width:620px){
+        margin-top:3em;
+    }
+}
+div.timeline-info>div.right>h1{
+    font-size:4em;
+    margin:0px;
+}
+div.timeline-info>div.right>p{
+    font-size:2em;
+    width:90%;
+    justify-self:flex-start;
+    margin-right:auto;
+    @media only screen and (max-width:900px){
+        justify-self:flex-start;
+        margin:0px;
+        margin-top:1em;
+    }
+}
+
+div.timeline-info>div.right>div.event-grp{
+    display:flex;
+    justify-content: flex-start;
+    @media only screen and (max-width:900px){
+        justify-content:flex-start;
+        margin-top:2em;
+    }
+}
+
+div.timeline-info>div.right>div.event-grp>a{
+    border:0px solid black;
+    text-decoration: none;
+    color:black;
+    box-sizing: border-box;
+    background-color:white;
+    font-family:variables.$puritan_font;
+    font-weight:bold;
+    font-size:1.2em;
+    padding:0.3em 0.5em;
+    display:inline-block;
+    margin-right:0.5em;
+    border-radius:0.1em;
+    opacity:0;
+    animation:scale-out 0.5s ease-out 1 both;
+    @keyframes scale-out {
+        from{
+            opacity:0;
+        }
+        to{
+            opacity:1;
+        }
+    }
+    @media only screen and (max-width:900px){
+        margin-right:0.5em;
+        border:2px solid black;
+    }
+}
+div.timeline-info>div.right>div.slide-indicator{
+    display:flex;
+    justify-content:center;
+    margin-top:2em;
+    &>span{
+        width:1em;
+        height:1em;
+        background-color:white;
+        border-radius:50%;
+        margin:0px 0.5em;
+        box-sizing: border-box;
+        cursor:pointer;
+        transition:background-color 0.3s ease-out;
+    }
+    &[active="0"]>span:first-child{
+        background-color:variables.$primary_color;
+    }
+    &[active="1"]>span:nth-child(2){
+        background-color:variables.$primary_color;
+    }
+    &[active="2"]>span:nth-child(3){
+        background-color:variables.$primary_color;
+    }
+    @media only screen and (max-width:900px){
+        margin-top:3em;
+        justify-content:flex-start;
+        &>span{
+            background-color:variables.$black_color;
+            border:2px solid variables.$black_color;
+        }
+    }
+
+}
+section.timeline-page>div.road{
+    position:relative;
+    @media only screen and (max-width:900px){
+        display:none;
+    }
+}
+section.timeline-page>div.road>div.f1-car{
+    width:14em;
+    height:calc(14em * (131 / 200));
+    background-size:contain;
+    background-position:center center;
+    background-image:url('../images/f1-top-view.png');
+    position:absolute;
+    top:50%;
+    transform:translateY(-60%) rotateZ(-25deg);
+
+}
+div.small-screen-road{
+    display:none;
+    @media screen and (max-width:900px) and (min-width:400px){
+        display: block;
+        position:absolute;
+        height:100%;
+        transform:translateY(-40%);
+        width:100%;
+        background-image:url("../images/road_right.svg");
+        background-size:contain;
+        right:0px;
+        top:50%;
+        background-position:center right;
+        background-repeat:repeat-y;
+        overflow:hidden;
+        z-index:-1;
+        &>div{
+            position:absolute;
+            top:50%;
+            background-image:url('../images/f1-top-view.png');
+            background-size:contain;
+            background-position:center;
+            right:0px;
+            transform:rotateZ(-90deg) translateY(60%);
+            width:9em;
+            height:calc(9em * (120 / 160));
+        }
+    }
+}

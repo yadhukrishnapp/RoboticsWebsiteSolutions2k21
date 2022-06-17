@@ -1,0 +1,223 @@
+@use './variables' as variables;
+section.hero-page{
+    background-size:cover;
+    background-position:center right;
+    background-image:url('../images/main-screen-bg.svg');
+    height:900px;
+    position:relative;
+}
+div.monitor{
+    position:absolute;
+    top:3em;
+    left:50%;
+    transform:translateX(-50%);
+    width:80%;
+    height:calc(80vw * (1024 / 1920));
+    background-color:variables.$black_color;
+    border:15px solid black;
+    border-radius:1em;
+    color:white;
+    font-family:variables.$mono_font;
+    &::after{
+        content:"";
+        position:absolute;
+        background-repeat: no-repeat;
+        width:400px;
+        height:calc(400px * (80 / 325));
+        background-image:url('../images/tv_stand.svg');
+        background-size:contain;
+        background-position:center;
+        top:100%;
+        left:50%;
+        transform:translateX(-50%);
+    }
+
+}
+div.monitor>div.terminal{
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    z-index:1;
+}
+div.monitor>div.terminal>h1{
+    font-size:4em;
+    margin:0px;
+    text-align:center;
+    margin-top:0.5em;
+    text-transform: uppercase;
+}
+div.monitor>div.terminal>div.terminal-window{
+    margin: 0 auto;
+    margin-top:2.8em;
+    width:850px;
+    height:calc(850px * (1024 / 1920));
+    background-color:black;
+    border:6px solid white;
+    border-radius:6px;
+    box-sizing: border-box;
+    display:grid;
+    grid-template-rows:8% 92%;
+}
+div.monitor>div.monitor-bg{
+    position:absolute;
+    top:0px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    background-color:variables.$black_color;
+    overflow: hidden;
+}
+div.monitor>div.monitor-bg>div.bot-icon{
+    width:19em;
+    height:19em;
+    position:absolute;
+    background-image:url('../images/small-robot-main-screen.svg');
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+    &.left{
+        left:0px;
+        top:40%;
+        transform:translate(-50%,-50%) rotateZ(25deg);
+    }
+    &.right{
+        top:60%;
+        right:0px;
+        transform:translate(50% , -50%) rotateZ(-25deg);
+    }
+}
+div.terminal-window>h2.console-head{
+    color:black;
+    text-align:center;
+    background-color:white;
+    margin:0px;
+    padding:0.2em 0px;
+}
+div.terminal-window>div.terminal-content{
+    overflow:auto;
+    &>div.instruction{
+        font-size:2.5em;
+        width:100%;
+        height:100%;
+        display:flex;
+        flex-flow: column;
+        align-items:center;
+        justify-content:center;
+        &>p{
+            width:70%;
+            text-align:center;
+        }
+        & div.console-btn-group{
+            width:50%;
+            justify-content:space-between;
+            display:flex;
+        }
+        & button{
+            font-size:0.6em;
+            font-family:variables.$mono_font;
+            background-color:white;
+            border:0px;
+            padding:0.3em 0.8em;
+            border-radius:0.1em;
+            font-weight:bold;
+            cursor:pointer;
+        }
+        &.no-prev div.console-btn-group{
+            justify-content: center;
+        }
+        &.no-prev button#prev{
+            display:none;
+        }
+    }
+    &>div.loading-screen{
+        width:70%;
+        height:80%;
+        position:relative;
+        top:10%;
+        margin:0 auto;
+        &>h1{
+            font-size:2em;
+            text-align:center;
+        }
+        &>h3{
+            font-size:1.3em;
+            margin-top:3em;
+            margin-bottom:1em;
+        }
+        &>div.loading-wrapper{
+            width:100%;
+            border:3px solid white;
+            box-sizing: border-box;
+            height:50px;
+        }
+        &>div.loading-wrapper>div.loading-bar{
+            width:30%;
+            height:100%;
+            background-color:white;
+        }
+        &>button#launch{
+            display:block;
+            margin:2em auto;
+            font-size:1.4em;
+            border:0px;
+            background-color:white;
+            font-weight:bold;
+            padding:0.3em 1em;
+            font-family:variables.$mono_font;
+            cursor:pointer;
+        }
+
+    }
+    &>div.real-console{
+        padding:1em;
+        box-sizing: border-box;
+        font-family:variables.$ubuntu_mono_font;
+        &>div.query{
+            font-size:1.5em;
+            display:inline-block;
+            caret-color:black;
+            position:relative;
+            color:gray;
+            &:not(:first-child){
+                margin-top:0.5em;
+            }
+        }
+        & div.query-string{
+            display:inline-block;
+        }
+        & div.query-string:focus, & div.query-string+span{
+            color:white;
+        }
+        & div.query-string:focus::after{
+            animation:caret_animate 0.3s ease-in infinite alternate;
+        }
+        @keyframes caret_animate {
+            from{
+                opacity:0;
+            } 
+            to{
+                opacity:1;
+            }
+        }
+        & div.query-string::after{
+            content:"_";
+        }
+        [contentEditable]{
+            outline:none;
+        }
+
+        & div.query-string:not([contentEditable])::after{
+            content:none;
+        }
+        
+        &>div.answer{
+            font-size:1.3em;
+        }
+
+
+
+    }
+
+}

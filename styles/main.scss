@@ -1,0 +1,26 @@
+@use './variables' as variables;
+@use './events_page' as events_section;
+@use './prizes_page' as prizes_page;
+@use './footer_page' as footer_page;
+@use './timeline_page' as timeline;
+@use './hero_page' as hero_page;
+@use './nav' as nav;
+@use './main_page' as main_page;
+@use './registration_form' as registration_form;
+@use './modal_section' as modal_section;
+@use './events_new_page' as events_new_page;
+
+
+$red : green;
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+
+button:focus{
+    outline:none;
+}
